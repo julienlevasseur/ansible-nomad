@@ -12,4 +12,8 @@ nomad_os_packages:
     {% else %}\
       cgroup-tools\
     {% endif %}"
-  - libcgroup1
+  - "{% if ( ansible_distribution  == 'Ubuntu' and ansible_distribution_version is version('23', '>=') ) %}
+      libcgroup2
+    {% else %}
+      libcgroup1
+    {% endif %}"
