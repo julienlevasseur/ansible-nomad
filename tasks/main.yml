@@ -152,7 +152,7 @@
     - restart nomad
 
 - name: Host volume
-  include_task: host_volume.yml
+  include_tasks: host_volume.yml
 
 - name: SYSV init script
   template:
